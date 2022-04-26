@@ -1,0 +1,166 @@
+@import url(https://fonts.google.com/specimen/Overpass);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ------ colors */
+  --white: hsl(0, 0%, 100%);
+  --lightWhite: hsla(0, 0%, 90%, 80%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 59%);
+  --darkBlue: hsla(213, 20%, 18%, 0.755);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+  --paragraphFontSize: 15px;
+  --lightGreyMod: hsla(216, 12%, 63%, 14%);
+
+}
+
+body {
+  background-color: var(--veryDarkBlue);
+  display: flex;
+  color: var(--white);
+  flex-direction: column;
+  min-height: 100vh;
+  place-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-family: 'Overpass', sans-serif;
+}
+
+/* -------- card ---------- */
+#rateStart,
+#thankState {
+  background-color: var(--darkBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5em;
+  border-radius: 18px;
+  transition: all 0.5s;
+}
+
+#rateStart.submit {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+}
+
+#rateStart img {
+  width: 50px;
+  padding: 1em;
+  background: var(--lightGreyMod);
+  border-radius: 50%;
+}
+
+#rates {
+  display: flex;
+  place-content: center;
+  /* width: 100%;  */
+  justify-content: space-around;
+  margin: 1.5em 0;
+}
+
+#rates span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  padding: 1.5em;
+  margin: 0 0.5em;
+  background-color: var(--lightGreyMod);
+  border-radius: 50%;
+}
+
+p {
+  font-size: var(--paragraphFontSize);
+  color: var(--mediumGrey);
+  line-height: 1.5em;
+}
+
+h2 {
+  margin: 1em 0;
+}
+
+#submit,
+#rates span {
+  cursor: pointer;
+}
+
+#submit {
+  display: flex;
+  place-content: center;
+  background: var(--orange);
+  padding: 1em;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+#submit:hover {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+#rates span:hover {
+  background-color: var(--orange);
+}
+
+#rates span.selected {
+  background-color: var(--lightGrey);
+}
+
+/* ------ thankState ----- */
+#thankState {
+  text-align: center;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#thankState.submited {
+  padding: 1.5em;
+  padding-bottom: 2em;
+  max-height: 100vh;
+
+}
+
+#thankState img {
+  width: 50%;
+  margin: 1em;
+  align-self: center;
+}
+
+#selectedRate {
+  background-color: var(--lightGreyMod);
+  color: var(--orange);
+  width: fit-content;
+  padding: 0.3em 1em;
+  border-radius: 18px;
+  align-self: center;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 375px) {
+
+  #rateStart,
+  #thankState {
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 1440px) {
+
+  #rateStart,
+  #thankState {
+    max-width: 380px;
+  }
+}
