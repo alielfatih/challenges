@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin: 1em 0;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="rateStart">
+    <img src="/images/icon-star.svg" alt="Star icon">
+
+    <h2>
+      How did we do?
+    </h2>
+
+    <p>
+      Please let us know how we did with your support request. All feedback is appreciated
+      to help us improve our offering!
+    </p>
+
+    <div id="rates">
+      <span data-rate="1">1</span>
+      <span data-rate="2">2</span>
+      <span data-rate="3">3</span>
+      <span data-rate="4">4</span>
+      <span data-rate="5">5</span>
+    </div>
+
+    <div id="submit">
+      Submit
+    </div>
+
+  </div>
+
+  <div id="thankState">
+    <img src="/images/illustration-thank-you.svg" alt="">
+    <p id="selectedRate">You selected <span></span> out of 5</p>
+
+    <h2>Thank you!</h2>
+    <p>
+      We appreciate you taking the time to give a rating. If you ever need more support,
+      don’t hesitate to get in touch!
+    </p>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://alielfatih.github.io/Portfolio">Ali Elfatih</a>.
+  </div>
+  <script>
+    const rateCard = document.getElementById('rateStart');
+    const thankcard = document.getElementById('thankState');
+    const rateItems = document.querySelectorAll('#rates span');
+    const submitBtn = document.getElementById('submit');
+    let rateValue;
+    rateItems.forEach(item => {
+      item.onclick = () => {
+        if (document.querySelector('#rates .selected'))
+          document.querySelector('#rates .selected').classList.remove('selected');
+        item.classList.toggle('selected');
+        rateValue = item.dataset.rate;
+      }
+    });
+    submitBtn.onclick = () => {
+      const selectedRate = document.querySelector('#selectedRate span');
+      selectedRate.innerText = rateValue;
+      if (document.querySelector('.selected')) {
+        thankcard.classList.toggle('submited');
+        rateCard.classList.toggle('submit');
+      }
+    }
+  </script>
+</body>
+
+</html>
