@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --veryDarkBlueMain: hsl(217, 54%, 11%);
+  --veryDarkBlueCard: hsl(216, 50%, 16%);
+  --veryDarkBlueLine: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  --pSize: 18px;
+}
+
+body {
+  background-color: var(--veryDarkBlueMain);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--White);
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 21px; 
+  align-self: flex-start;
+  font-weight: 600;
+  margin: 1em 0;
+}
+a {
+  text-decoration: none;
+  color: var(--White);
+}
+a:hover {
+  color: var(--cyan);
+}
+p {
+  font-size: var(--pSize);
+  color: var(--softBlue);
+}
+hr  {
+  background-color: var(--veryDarkBlueLine);
+  height: 1px; 
+  width: 100%;
+  border: 0;
+  margin: 0.5em;
+} span {
+  color: var(--softBlue);
+  font-weight: 300;
+}
+#card {
+  background-color: var(--veryDarkBlueCard);
+  padding: 1.5em;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cardImg {
+  width: 100%;
+}
+#imgCardContainer {
+  position: relative;
+}
+#imgCardContainer:hover:after {
+  position: absolute;
+  background: var(--cyan) url('./images/icon-view.svg') no-repeat center;
+  top: auto;
+  left: 0;
+  height: 98.8%; 
+  width: 100%;
+  cursor: pointer;
+  content: '';
+  opacity: 0.5;
+}
+#cardState {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 1em;
+}
+#cardState > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#cardState img  {
+  margin: auto 0.5em auto auto; 
+}
+#cardState div:nth-child(1){
+  color: var(--cyan);
+  font-weight: 600; 
+}
+#cardState div:nth-child(2){
+  color: var(--softBlue);
+  font-weight: 300;
+}
+#cardCreator {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0 ;
+}
+#cardCreator img {
+  border: 2px solid var(--White);
+  border-radius: 50%;
+  width: 12%;
+  margin-right: 1em;
+}
+@media (max-width:375px){
+  #card {
+    max-width: 330px;
+
+  }
+}
+@media (min-width: 376px){
+  #card {
+    max-width: 350px;
+  }
+}
