@@ -61,6 +61,7 @@ hr  {
 }
 #cardImg {
   width: 100%;
+  border-radius: 6px;
 }
 #imgCardContainer {
   position: relative;
