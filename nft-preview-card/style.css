@@ -76,6 +76,7 @@ hr  {
   cursor: pointer;
   content: '';
   opacity: 0.5;
+  border-radius: 6px;
 }
 #cardState {
   display: flex;
